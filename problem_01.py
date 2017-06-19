@@ -2,8 +2,7 @@ import unittest
 from functools import reduce
 
 def problem_01(r):
-    numbers = [x for x in range(r) if x % 3 == 0 or x % 5 == 0]
-    return sum(numbers)
+    return sum([x for x in range(r) if x % 3 == 0 or x % 5 == 0])
 
 class PorjectEulerProblem01Tests(unittest.TestCase):
     '''test for the tenpin bowling score kata'''
