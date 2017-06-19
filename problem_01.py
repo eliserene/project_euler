@@ -3,7 +3,7 @@ from functools import reduce
 
 def problem_01(r):
     numbers = [x for x in range(r) if x % 3 == 0 or x % 5 == 0]
-    return reduce((lambda x, y: x + y), numbers, 0)
+    return sum(numbers)
 
 class PorjectEulerProblem01Tests(unittest.TestCase):
     '''test for the tenpin bowling score kata'''
