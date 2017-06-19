@@ -1,15 +1,12 @@
 import unittest
 
 def fibonacci_numbers(limit):
-    previous_term = 1
+    previous_term, current_term = 1, 1
     yield previous_term
-    current_term = 1
-    yield current_term
     while current_term < limit:
-        next_term = previous_term + current_term
-        yield next_term
-        previous_term = current_term
-        current_term = next_term
+        yield current_term
+        previous_term, current_term = current_term, (previous_term + current_term)
+
 
 def problem_02(limit):
     return sum(x for x in fibonacci_numbers(limit) if x % 2 == 0)
@@ -19,7 +16,7 @@ class PorjectEulerProblem02Tests(unittest.TestCase):
 
     def test_function_runs(self):
         ''''Basic smole test: does the function run?'''
-        problem_02(80)
+        problem_02(5)
 
     def test_the_first_ten_terms(self):
         self.assertEqual(problem_02(80), 44)
