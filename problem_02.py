@@ -1,11 +1,11 @@
 import unittest
 
 def fibonacci_numbers(limit):
-    previous_term, current_term = 1, 1
-    yield previous_term
-    while current_term < limit:
-        yield current_term
-        previous_term, current_term = current_term, (previous_term + current_term)
+    last_n, n = 1, 1
+    yield last_n
+    while n < limit:
+        yield n
+        last_n, n = n, (last_n + n)
 
 
 def problem_02(limit):
