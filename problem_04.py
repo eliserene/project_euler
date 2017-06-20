@@ -4,8 +4,8 @@ def is_palindrome(n):
     return str(n) == str(n)[::-1]
 
 def problem_04():
-  xs, ys = range(999, 100, -1), range(999, 100, -1)
-  return max([x * y for x in xs for y in ys if is_palindrome(x * y)])
+  numbers = range(999, 100, -1)
+  return max([x * y for x in numbers for y in numbers if is_palindrome(x * y)])
 
 class PorjectEulerProblem04Tests(unittest.TestCase):
     '''Find the largest palindrome made from the product of two 3-digit numbers.'''
