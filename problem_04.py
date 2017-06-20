@@ -3,9 +3,17 @@ import unittest
 def is_palindrome(n):
     return str(n) == str(n)[::-1]
 
+def products(numbers):
+    return (x * y for x in numbers for y in numbers)
+
+def palindromes(numbers):
+    return (n for n in products(numbers) if is_palindrome(n))
+
+def numbersWithDigits(n):
+    return range(pow(10, n-1), pow(10, n))
+
 def problem_04():
-  numbers = range(999, 100, -1)
-  return max([x * y for x in numbers for y in numbers if is_palindrome(x * y)])
+    return max(palindromes(numbersWithDigits(3)))
 
 class PorjectEulerProblem04Tests(unittest.TestCase):
     '''Find the largest palindrome made from the product of two 3-digit numbers.'''
