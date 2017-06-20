@@ -6,6 +6,12 @@ class Factorial:
         self._number = number
         self._factorial = self.find_factorial(number)
 
+    def factorial_of(self):
+        return self._number
+
+    def fact(self):
+        return self._factorial
+
     def find_factorial(self, number):
         if number == 0 or number == 1:
             return 1
