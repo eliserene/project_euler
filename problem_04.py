@@ -4,7 +4,13 @@ def is_palindrome(n):
     return str(n) == str(n)[::-1]
 
 def problem_04():
-    pass
+    xs, ys = range(999, 100, -1), range(999, 100, -1)
+    palindromes = []
+    for x in xs:
+        for y in ys:
+            if is_palindrome(x * y):
+                print(x * y)
+                return x * y
 
 class PorjectEulerProblem04Tests(unittest.TestCase):
     '''Find the largest palindrome made from the product of two 3-digit numbers.'''
@@ -16,6 +22,9 @@ class PorjectEulerProblem04Tests(unittest.TestCase):
     def test_is_pelindrome(self):
         self.assertTrue(is_palindrome(121))
         self.assertFalse(is_palindrome(123))
+
+    def test_largest_palindrome(self):
+        self.assertEqual(problem_04(), 906609)
 
 if __name__ == '__main__':
     unittest.main()
