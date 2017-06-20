@@ -3,8 +3,6 @@ import unittest
 class Factorial:
 
     def __init__(self, number):
-        self._number = number
-
         def find_factorial(number):
             if number == 0 or number == 1:
                 return 1
@@ -13,14 +11,8 @@ class Factorial:
 
         self._factorial = find_factorial(number)
 
-    def factorial_of(self):
-        return self._number
-
-    def factorial(self):
-        return self._factorial
-
     def sum_digits(self):
-        return sum([int(d) for d in str(self._factorial)])
+        return sum(int(d) for d in str(self._factorial))
 
 class PorjectEulerProblem20Tests(unittest.TestCase):
     '''Find the largest palindrome made from the product of two 3-digit numbers.'''
