@@ -4,13 +4,13 @@ def is_palindrome(n):
     return str(n) == str(n)[::-1]
 
 def problem_04():
-    xs, ys = range(999, 100, -1), range(999, 100, -1)
-    palindromes = []
-    for x in xs:
-        for y in ys:
-            if is_palindrome(x * y):
-                print(x * y)
-                return x * y
+  xs, ys = range(999, 100, -1), range(999, 100, -1)
+  palindromes = []
+  for x in xs:
+      for y in ys:
+          if is_palindrome(x * y):
+              palindromes.append(x * y)
+  return max(palindromes)
 
 class PorjectEulerProblem04Tests(unittest.TestCase):
     '''Find the largest palindrome made from the product of two 3-digit numbers.'''
