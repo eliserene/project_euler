@@ -4,19 +4,20 @@ class Factorial:
 
     def __init__(self, number):
         self._number = number
-        self._factorial = self.find_factorial(number)
+
+        def find_factorial(number):
+            if number == 0 or number == 1:
+                return 1
+            else:
+                return number * find_factorial(number - 1)
+
+        self._factorial = find_factorial(number)
 
     def factorial_of(self):
         return self._number
 
-    def fact(self):
+    def factorial(self):
         return self._factorial
-
-    def find_factorial(self, number):
-        if number == 0 or number == 1:
-            return 1
-        else:
-            return number * self.find_factorial(number - 1)
 
     def sum_digits(self):
         return sum([int(d) for d in str(self._factorial)])
