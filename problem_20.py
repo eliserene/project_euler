@@ -19,16 +19,13 @@ class PorjectEulerProblem20Tests(unittest.TestCase):
 
     def test_function_runs(self):
         ''''Basic smole test: does the function run?'''
-        f = Factorial(5)
-        f.sum_digits()
+        Factorial(5).sum_digits()
 
     def test_sum_factorial_10(self):
-        f = Factorial(10)
-        self.assertEqual(f.sum_digits(), 27)
+        self.assertEqual(Factorial(10).sum_digits(), 27)
 
     def test_sum_factorial_100(self):
-        f = Factorial(100)
-        self.assertEqual(f.sum_digits(), 648)
+        self.assertEqual(Factorial(100).sum_digits(), 648)
 
 if __name__ == '__main__':
     unittest.main()
