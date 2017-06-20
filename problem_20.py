@@ -2,6 +2,9 @@ import unittest
 
 class Factorial:
 
+    def __init__(self, number):
+        self._number = number
+
     def sum_digits(self):
         pass
 
@@ -9,7 +12,7 @@ class PorjectEulerProblem20Tests(unittest.TestCase):
     '''Find the largest palindrome made from the product of two 3-digit numbers.'''
 
     def setUp(self):
-        self.f = Factorial()
+        self.f = Factorial(100)
 
     def test_function_runs(self):
         ''''Basic smole test: does the function run?'''
