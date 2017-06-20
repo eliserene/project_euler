@@ -5,12 +5,7 @@ def is_palindrome(n):
 
 def problem_04():
   xs, ys = range(999, 100, -1), range(999, 100, -1)
-  palindromes = []
-  for x in xs:
-      for y in ys:
-          if is_palindrome(x * y):
-              palindromes.append(x * y)
-  return max(palindromes)
+  return max([x * y for x in xs for y in ys if is_palindrome(x * y)])
 
 class PorjectEulerProblem04Tests(unittest.TestCase):
     '''Find the largest palindrome made from the product of two 3-digit numbers.'''
