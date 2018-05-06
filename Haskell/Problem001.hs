@@ -9,9 +9,8 @@ import Test.Tasty.HUnit
 
 problem001 n = sum [x | x <- [1..(n - 1)], x `mod` 3 == 0 || x `mod` 5 == 0]
 
-main = putStrLn $ show (problem001 1000)
+main = putStr $ show (problem001 1000)
 
 unit_test1 = assertEqual "less than 10" 23 (problem001 10)
 unit_test2 = assertEqual "less than 100" 2318 (problem001 100)
-
---tests = TestList [TestLabel "test1: less than 10" test1, TestLabel "test 2: less than 100" test2]
+unit_test3 = assertEqual "less than 20" 78 (problem001 20)
