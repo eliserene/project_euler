@@ -2,3 +2,4 @@
 *.hi
 .cabal-sandbox
 /Haskell/dist
+/Haskell/.vscode
